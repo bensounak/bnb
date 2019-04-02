@@ -1,0 +1,13 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': loveIts > 0,
+                'list-group-item-danger': loveIts < 0}">
+  <div>
+    <h4>{{ title }}</h4>
+    <h5>{{ content }}</h5>
+    <h5>{{ created_at | date:'d/M/y, h:m' }}</h5>
+    <h5>{{ loveIts }}</h5>
+    <input type="text" class="form-control" [(ngModel)]="loveIts">
+    <button class="btn btn-success" (click)="onPlus1()"> Love it! </button>
+    <button class="btn btn-danger" (click)="onMoins1()"> Don't love it!</button>
+  </div>
+</li>
