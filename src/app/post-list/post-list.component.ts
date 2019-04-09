@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { BlogService } from '../services/blog.service.ts';
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
@@ -7,30 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PostListComponent implements OnInit {
 
-postes = [
-  {
-    title:'Mon 1er post',
-    content:'Ceci est mon premier post dans ce Blog',
-    loveIts: 0,
-    created_at:new Date()
-  },
-  {
-    title:'Mon 2em post',
-    content:'Ceci est mon deuxième post dans ce Blog',
-    loveIts: 0,
-    created_at:new Date()
-  },
-  {
-    title:'Mon dernier post',
-    content:'Ceci est mon troisieme post dans ce Blog',
-    loveIts: 0,
-    created_at:new Date()
+  postes:any[];
+  constructor(private blogService:BlogService) {
+    //this.postes = this.blogService.postes;
   }
 
-]
-
-  constructor() { }
-
   ngOnInit() {
+    this.postes = this.blogService.postes;
   }
 }

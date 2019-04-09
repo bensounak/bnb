@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostListItemComponent } from './post-list-item/post-list-item.component';
-import { FormsModule} from '@angular/forms';
-import { AppareilServices} from './services/AppareilService';
+import { FormsModule } from '@angular/forms';
+import { BlogService } from './services/blog.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { AppareilServices} from './services/AppareilService';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [AppareilService],
+  providers: [BlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
